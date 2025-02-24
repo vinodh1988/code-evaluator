@@ -71,7 +71,7 @@ public class CodeExecutor {
                 // Create a folder named after the person and the current date
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String folderName = personName + "_" + sdf.format(new Date());
-                String folderPath = "E:\\code\\" + folderName;
+                String folderPath = "/home/azureuser/codingtest/" + folderName;
                 File folder = new File(folderPath);
                 if (!folder.exists()) {
                     if (!folder.mkdirs()) {
@@ -80,7 +80,7 @@ public class CodeExecutor {
                 }
 
                 // Write the code to a temporary file inside the new folder
-                String fileName = folderPath + "\\" + className + ".java";
+                String fileName = folderPath + "/" + className + ".java";
                 try (FileWriter writer = new FileWriter(fileName)) {
                     writer.write(code);
                 }
